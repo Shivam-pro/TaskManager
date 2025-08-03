@@ -1,38 +1,281 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-color: #111;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.login-container{
+  margin: 70px auto;
+  width: 50vw;
+  padding: 50px;
+  border: 2px solid green;
+  border-radius: 20px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form-control{
+  align-items: center;
   display: flex;
   flex-direction: column;
+  gap: 20px;
+}
+.form-control > input{
+  padding: 10px 20px;
+  border: 2px solid green;
+  border-radius: 20px;
+  width: 70%;
+  font-size: 1rem;
+  outline: none;
+  color: white;
+  background-color: transparent;
+}
+.login-btn{
+  font-size: 1rem;
+  padding: 10px 20px;
+  color: white;
+  border: 2px solid green;
+  border-radius: 20px;
+  background-color: green;
+  width: 30%;
+}
+.header{
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+.greet{
+  font-size: 1rem;
+}
+.name{
+  font-size: 2rem;
+}
+.logout-btn{
+  font-size: 1rem;
+  color: white;
+  align-self: center;
+  padding: 10px 20px;
+  background-color: red;
+  border: none;
+  border-radius: 10px;
+}
+/* Employee Component */
+.Employee-container{
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  padding: 40px;
+  height: 100vh;
+  background-color: #1c1c1c;
+}
+.tasklist-container{
+  display: flex;
+  gap: 20px;
+}
+.tasks{
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.tasks:active{
+  scale: 0.99;
+}
+.task-Number{
+  font-size: 2rem;
+}
+.task-type{
+  font-size: 1.5rem;
+}
+.all{
+  background-color: rgb(4, 164, 173);
+}
+.new{
+  background-color: rgba(83, 83, 254, 0.8);
+}
+.completed{
+  background-color: rgba(9, 214, 9, 0.8);
+}
+.failed{
+  background-color: rgb(255, 75, 114);
+}
+.task-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  width: 100%;
+  min-width: 300px;
+  height: 300px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.task-container::-webkit-scrollbar{
+  display: none;
+}
+.task-box{
+  flex: 0 0 auto;
+  width: 30%;
+  padding: 20px;
+  color: white;
+  border-radius: 10px;
+  /* background-color: rgb(255 73 113); */
+}
+.task-head{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.task-head .catagory{
+  padding: 5px 10px;
+  background-color: #e60202;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+.task-content h2{
+  margin-bottom: 10px;
+}
+.task-content p{
+  font-size: 15px;
+}
+.buttons-div{
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+/* Admin Component */
+.admin-container{
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  padding: 20px;
+}
+.createtask-container{
+  background-color: #1c1c1c;
+  padding: 20px;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.form{
+  display: flex;
+  justify-content: space-between;
+  gap: 10%;
+}
+.info{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+}
+.input-boxes{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.input-boxes input{
+  padding: 5px 10px;
+  background-color: transparent;
+  border: 2px solid gray;
+  color: white;
+  border-radius: 5px;
+  width: 100%;
+}
+.desc{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+}
+.desc textarea{
+  min-height: 186px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid grey;
+  border-radius: 5px;
+  padding: 10px;
+}
+.desc button{
+  padding: 10px 0;
+  background-color: #3aab3a;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+}
+/* .alltask-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: white;
+  background-color: #1c1c1c;
+  padding: 20px;
+  max-height: 200px;
+  overflow-y: scroll;
+}
+.alltask-container::-webkit-scrollbar{
+  display: none;
+} */
+/* .task{
+  display: grid;
+  grid-template-columns: repeat(6,auto);
+  background-color: #e60202;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.employee-tasks{
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  background-color: #e60202;
+  padding: 10px 20px;
+  border-radius: 10px;
+} */
+.alltask-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 20px auto;
+  border-collapse: collapse; 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.task, .employee-tasks {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr; 
+  align-items: center;
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.task {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  border-bottom: 2px solid #ccc;
+}
+
+.employee-tasks {
+  border-bottom: 1px solid #ddd;
+}
+
+.employee-tasks:nth-child(even) {
+  background-color: #f9f9f9; 
+}
+
+.employee-tasks:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+h3 {
+  margin: 0;
+  padding: 5px 0;
+}
+
+/* Add some overall spacing */
+.alltask-container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #1c1c1c;
 }
